@@ -1,18 +1,13 @@
-# Salesforce DX Project: Next Steps
+# Assignement from a senior developper
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Objectif : In a Lightning WEB Component, create a search screan with two creterias :
+- Name
+- Postal Code
+This search will search through the reccords of the sObject Account.
+The page will display a table of all the Accounts matching theese criterias.
 
-## How Do You Plan to Deploy Your Changes?
+# My observation wrighting this code
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+I made sure to have one SOQL statement in order to limit access to database. For futur usage of my code it make sure no governor limits will be set. That was my main concern.
 
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+I had to use Sets as @AuraEnable statement doesn't support Sets.
