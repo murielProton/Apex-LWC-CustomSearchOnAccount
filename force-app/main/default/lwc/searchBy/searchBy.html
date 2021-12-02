@@ -1,0 +1,58 @@
+
+<template>
+    <div class="slds-m-around_medium">
+      
+      <div id="accountNameSearchInput" class="slds-m-bottom_small">
+          <lightning-input type="text"
+             value={searchValueName}
+             label="Account Name"
+             onchange={searchKeywordName}
+             ></lightning-input>
+       </div>
+
+       <div id="accountPostalCodeSearchInput" class="slds-m-bottom_small">
+        <lightning-input type="text"
+           value={searchValuePostalCode}
+           label="Postal Code"
+           onchange={searchKeywordPC}
+           ></lightning-input>
+     </div>
+       
+       <lightning-button label="Search"
+          onclick={handleSearchKeyword}
+          variant="brand"></lightning-button>
+          
+      
+       <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-top_small">
+          <thead>
+             <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                   <div class="slds-truncate" title="Account Name">Account Name</div>
+                </th>
+                <th class="" scope="col">
+                   <div class="slds-truncate" title="Billing Postal Code">Billing Postal Code</div>
+                </th>
+                <th class="" scope="col">
+                   <div class="slds-truncate" title="Shipping Postal Code">Shipping Postal Code</div>
+                </th>
+             </tr>
+          </thead>
+          
+          <tbody>   
+             <template for:each={accountsRecord} for:item="account">
+                <tr class="slds-hint-parent" key={account.Id}>
+                   <td>
+                      <div class="slds-truncate">{account.Name}</div>
+                   </td>
+                   <td>
+                      <div class="slds-truncate">{account.BillingPostalCode}</div>
+                   </td>
+                   <td>
+                    <div class="slds-truncate">{account.ShippingPostalCode}</div>
+                   </td>
+                </tr>
+             </template>
+          </tbody>
+       </table>
+    </div>
+ </template>
